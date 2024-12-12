@@ -1,0 +1,607 @@
+Acceuil 
+
+<template>
+  <div class="main-content">
+    <!-- Section de présentation -->
+    <div class="presentation">
+      <div class="content-left">
+        <h1 class="title">
+          Université Le Havre Normandie<br />
+          <span class="subtitle">Un territoire d’exception pour étudier</span>
+        </h1>
+        <a href="#" class="btn-discover">→ DÉCOUVRIR</a>
+      </div>
+      <div class="content-right">
+        <img
+            src="https://www.univ-lehavre.fr/wp-content/uploads/2023/12/universite.jpg"
+            alt="Université Le Havre"
+            class="image-right"
+        />
+      </div>
+    </div>
+
+    <!-- Section des options -->
+    <div class="options">
+      <div class="option">
+        <button class="btn-option">
+          Lycéen
+          <i class="fas fa-angle-down"></i>
+        </button>
+      </div>
+      <div class="option">
+        <button class="btn-option">
+          Consulter le catalogue de formation
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "MainContent",
+};
+</script>
+
+<style scoped>
+/* Styles principaux */
+.main-content {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Section de présentation */
+.presentation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+}
+
+.content-left {
+  max-width: 50%;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.btn-discover {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #f05423;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
+}
+
+.btn-discover:hover {
+  border-bottom: 2px solid #f05423;
+}
+
+.image-right {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+
+/* Section des options */
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f05423;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-option {
+  background-color: white;
+  border: 2px solid white;
+  color: #f05423;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  width: 100%;
+  max-width: 300px;
+}
+
+.btn-option i {
+  font-size: 1.2rem;
+}
+
+.btn-option:hover {
+  background-color: #f05423;
+  color: white;
+  border-color: white;
+}
+</style>
+
+LOGIN
+
+import {ref} from 'vue';
+import * as z from 'zod';
+
+<template>
+  <div class="login-page">
+    <div class="login-container card shadow-lg">
+      <!-- Logos -->
+      <div class="login-logos text-center mb-4">
+        <img
+            src="https://www.univ-lehavre.fr/wp-content/uploads/2023/12/logos_universite_lehavre.png"
+            alt="Université Le Havre Normandie"
+            class="logo"
+        />
+      </div>
+
+      <!-- Titre -->
+      <h5 class="text-center fw-bold mb-4">
+        Autres utilisateurs invités (hors ULHN) :
+      </h5>
+
+      <!-- Formulaire -->
+      <form @submit.prevent="handleLogin">
+        <!-- Nom d'utilisateur -->
+  
+
+        <!-- Bouton Connexion -->
+        <button type="submit" class="btn btn-orange w-100">Connexion</button>
+
+        <!-- Lien Mot de passe oublié -->
+        <div class="text-center mt-3">
+          <a href="#" class="text-danger small">Mot de passe perdu ?</a>
+        </div>
+      </form>
+
+      <!-- Ligne de séparation -->
+      <hr class="my-4" />
+
+      <!-- Section "Se connecter au moyen du compte" -->
+      <h6 class="text-center fw-bold mb-3">
+        Se connecter au moyen du compte :
+      </h6>
+      <div class="mb-3">
+        <button class="btn btn-outline-light w-100 mb-2 d-flex align-items-center justify-content-start">
+          <span class="me-2">🔑</span> CAS - Université Le Havre Normandie
+        </button>
+        <button class="btn btn-outline-light w-100 mb-2 d-flex align-items-center justify-content-start">
+          <span class="me-2">🎓</span> ECAMPUS UNICAEN: Se connecter sur le site
+        </button>
+        <button class="btn btn-outline-light w-100 mb-2 d-flex align-items-center justify-content-start">
+          <span class="me-2">🎓</span> Plateforme e-learning Moodle de l'INSA
+          de Rouen
+        </button>
+        <button class="btn btn-outline-light w-100 mb-2 d-flex align-items-center justify-content-start">
+          <span class="me-2">🎓</span> Plate-forme d'enseignement Moodle de
+          l'ENSICAEN
+        </button>
+        <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-start">
+          <span class="me-2">🎓</span> UniversiTICE
+        </button>
+      </div>
+
+      <!-- Bouton "Avis relatif aux cookies" -->
+      <div class="text-center mt-4">
+        <button class="btn btn-light border">Avis relatif aux cookies</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { ref } from "vue";
+import * as z from "zod";
+
+const loginSchema = z.object({
+  username: z.string().min(1, "Le nom d'utilisateur est requis."),
+  password: z.string().min(1, "Le mot de passe est requis."),
+});
+
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+      errors: {
+        username: null,
+        password: null,
+      },
+    };
+  },
+  methods: {
+    handleLogin() {
+      // Validation avec Zod
+      const result = loginSchema.safeParse({
+        username: this.username,
+        password: this.password,
+      });
+
+      if (!result.success) {
+        // Gérer les erreurs de validation
+        const errorMap = result.error.format();
+        this.errors.username = errorMap.username?._errors[0] || null;
+        this.errors.password = errorMap.password?._errors[0] || null;
+      } else {
+        // Aucune erreur, procéder à la connexion
+        this.errors.username = null;
+        this.errors.password = null;
+        alert("Connexion réussie !");
+        // Appelez une API ou effectuez d'autres actions ici
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+/* Styles globaux */
+body {
+  background-color: #f9f9f9;
+}
+
+/* Page de login */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Conteneur principal */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Logos */
+.login-logos img.logo {
+  height: 50px;
+}
+
+/* Champs de saisie avec effet de focus */
+
+
+.input-orange:focus {
+  border-color: #f05423;
+  box-shadow: 0 0 4px rgba(240, 84, 35, 0.5);
+  outline: none;
+}
+
+/* Boutons */
+button.btn {
+  border: none;
+}
+
+button.btn-orange {
+  background-color: #f05423;
+  color: white;
+}
+
+button.btn-orange:hover {
+  background-color: #d9471f;
+}
+
+/* Boutons de connexion supplémentaires */
+button.btn-outline-light {
+  border: 2px solid #ddd;
+  background-color: #f9f9f9;
+  font-weight: 500;
+}
+
+button.btn-outline-light:hover {
+  border-color: black;
+  background-color: #f5f5f5;
+}
+
+/* Lien mot de passe perdu */
+a.text-danger {
+  text-decoration: none;
+}
+
+a.text-danger:hover {
+  text-decoration: underline;
+}
+
+/* Ligne de séparation */
+hr {
+  border-top: 1px solid #ddd;
+}
+
+/* Bouton cookies */
+.btn-light {
+  border: 1px solid #ddd;
+}
+
+.btn-light:hover {
+  background-color: #f5f5f5;
+}
+</style>
+
+
+NAVBAR :
+
+
+<template>
+  <header role="banner" class="fr-header">
+    <div class="fr-header__body">
+      <div class="fr-container">
+        <div class="fr-header__body-row">
+          <!-- Logo -->
+          <div class="fr-header__brand">
+            <a href="/" title="République Française">
+              <img
+                  src="https://www.univ-lehavre.fr/wp-content/uploads/2023/12/logos_universite_lehavre.png"
+                  alt="Logo République Française"
+                  class="fr-logo"
+              />
+            </a>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="fr-nav" id="navigation-main" role="navigation" aria-label="Menu principal">
+            <ul class="fr-nav__list">
+              <li class="fr-nav__item">
+                <a class="fr-nav__link" href="#">
+                  FORMATION
+                  <i class="fas fa-angle-down"></i>
+                </a>
+              </li>
+              <li class="fr-nav__item">
+                <a class="fr-nav__link" href="#">
+                  RECHERCHE
+                  <i class="fas fa-angle-down"></i>
+                </a>
+              </li>
+              <li class="fr-nav__item">
+                <a class="fr-nav__link" href="#">
+                  INTERNATIONAL
+                  <i class="fas fa-angle-down"></i>
+                </a>
+              </li>
+              <li class="fr-nav__item">
+                <a class="fr-nav__link" href="#">
+                  VIE DE CAMPUS
+                  <i class="fas fa-angle-down"></i>
+                </a>
+              </li>
+              <li class="fr-nav__item">
+                <a class="fr-nav__link" href="#">
+                  UNIVERSITÉ
+                  <i class="fas fa-angle-down"></i>
+                </a>
+              </li>
+              <li class="fr-nav__item">
+                <a class="fr-nav__link" href="#">
+                  ACTUALITÉS
+                  <i class="fas fa-angle-down"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Bouton Accessibilité -->
+          <div class="fr-header__buttons">
+            <button
+                class="btn_accessibilite"
+                title="Mode Accessibilité"
+                @click="$router.push('/login')"
+            >
+              <img
+                  src="https://www.univ-lehavre.fr/wp-content/uploads/2023/11/eye-off.svg"
+                  alt="menu rapide"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</template>
+
+<style scoped>
+/* Header principal */
+.fr-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 1rem;
+}
+
+/* Logo */
+.fr-logo {
+  height: 90px;
+}
+
+/* Navigation principale */
+.fr-nav__list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Espacement entre les items */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  flex: 1; /* Prend tout l'espace disponible */
+}
+
+.fr-nav__item {
+  position: relative;
+}
+
+.fr-nav__link {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+  text-align: center;
+  padding-bottom: 5px; /* Ajoute un espace pour l'effet */
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espacement entre le texte et l'icône */
+}
+
+.fr-nav__link i {
+  font-size: 0.8rem;
+  margin-left: 5px; /* Espacement entre le texte et l'icône */
+}
+
+/* Barre animée au survol */
+.fr-nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Place la barre plus bas */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0053a0; /* Couleur de la barre */
+  transition: width 0.3s ease; /* Animation fluide */
+}
+
+.fr-nav__link:hover::after {
+  width: 100%; /* Barre s'étend sur toute la largeur au survol */
+}
+
+/* Alignement des éléments */
+.fr-header__body-row {
+  display: flex;
+  justify-content: space-between; /* Espace entre logo, navbar et bouton */
+  align-items: center;
+}
+
+/* Bouton Accessibilité */
+.fr-header__buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espacement entre les boutons */
+}
+
+.btn_accessibilite {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+</style>
+
+
+index.ts 
+import { createRouter, createWebHistory, RouteRecordRaw, Router } from 'vue-router'
+import Register from "../components/Register.vue";
+import Navbar from "../components/Navbar.vue";
+import Login from "../components/Login.vue";
+
+const routes: RouteRecordRaw [] = [
+    { path: '/', component: Navbar },
+    { path: '/login', component: Login },
+    { path: '/register', component: Register },
+]
+
+const router: Router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
+
+export default router
+
+APP VUE :
+
+<script setup lang="ts">
+</script>
+
+<template>
+  <router-view/>
+
+
+</template>
+
+Main.ts :
+
+import { createApp } from 'vue'
+import './style.css'
+import App from './App.vue'
+import router from './routes'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
+import '@fortawesome/fontawesome-free/css/all.css';
+import './index.css'
+
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
+
+http.env.json :
+
+{
+  "dev": {
+    "endpointURL": "https://cettic.univ-lehavre.fr/api",
+    "adminToken": "",
+    "meToken": ""
+  }
+
+}
+scratch http : 
+
+### auth login
+POST {{endpointURL}}/v1/auth/login
+Traefik-Service: yii2-form
+Content-Type: application/json
+Accept-Language: fr-FR
+
+{
+  "Login": {
+    "email": "laisnea@univ-lehavre.fr",
+    "password": "SuperAdmin"
+  }
+}
+
+<> 2024-12-12T154144.401.txt
+<> 2024-12-12T154103.401.txt
+<> 2024-12-11T173814.401.txt
+<> 2024-12-11T173756.401.txt
+<> 2024-12-11T172629.401.txt
+<> 2024-12-11T172550.401.txt
+<> 2024-12-11T172540.401.txt
+<> 2024-12-11T171334.200.json
+<> 2024-12-11T170737.401.txt
+<> 2024-12-11T170657.404.html
+
+### auth get all users
+GET {{endpointURL}}/v1/auth/users
+Traefik-Service: yii2-form
+Content-Type: application/json
+X-Api-Key: {{adminToken}}
+Accept-Language: fr-FR
