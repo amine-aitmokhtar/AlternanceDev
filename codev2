@@ -1,3 +1,149 @@
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+
+NavBar
+<template>
+  <header role="banner" class="fr-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <!-- Logo -->
+        <div class="col-md-3 col-sm-6 text-center text-md-start">
+          <a href="/" title="République Française">
+            <img
+              src="https://www.univ-lehavre.fr/wp-content/uploads/2023/12/logos_universite_lehavre.png"
+              alt="Logo République Française"
+              class="fr-logo img-fluid"
+            />
+          </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="col-md-8 col-sm-12 text-center mt-3 mt-md-0">
+          <nav id="navigation-main" role="navigation" aria-label="Menu principal">
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link nav-formation" href="#">FORMATION</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-recherche" href="#">RECHERCHE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-international" href="#">INTERNATIONAL</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-campus" href="#">VIE DE CAMPUS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-universite" href="#">UNIVERSITÉ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-actualites" href="#">ACTUALITÉS</a>
+              </li>
+            </ul>
+       
+          </nav>
+          
+        </div>
+
+        <div class="col-md-1 text-end d-flex align-items-center justify-content-end">
+  <button class="btn-connect">CONNECTER</button>
+</div>
+
+
+
+      
+      </div>
+    </div>
+  </header>
+</template>
+
+<style scoped>
+/* Header principal */
+.fr-header {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 500;
+  padding: 15px 0;
+}
+
+/* Logo */
+.fr-logo {
+  max-height: 90px; /* Taille du logo */
+}
+
+/* Navigation */
+.nav-link {
+  color: black;
+  font-size: 0.9rem;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: transparent; /* Couleur par défaut */
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-formation::after {
+  background-color: #006400; /* Vert foncé */
+}
+
+.nav-recherche::after {
+  background-color: #ffa500; /* Orange clair */
+}
+
+.nav-international::after {
+  background-color: #800080; /* Mauve */
+}
+
+.nav-campus::after {
+  background-color: #4682b4; /* Bleu ciel un peu foncé */
+}
+
+.nav-universite::after {
+  background-color: #dc5539; /* Rouge */
+}
+
+.nav-actualites::after {
+  background-color: #e5735a; /* Rouge clair */
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #0053a0; /* Change la couleur au survol */
+}
+
+/* Boutons */
+button {
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b0432c;
+}
+
+
+</style>
+
+
+
+
+
+
 <template>
   <div>
     <Header />
