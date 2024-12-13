@@ -1,4 +1,28 @@
 <template>
+  <div>
+    <Header />
+    <HeroSection />
+    <ButtonsSection />
+  </div>
+</template>
+
+<script>
+import Header from './components/Header.vue';
+import HeroSection from './components/HeroSection.vue';
+import ButtonsSection from './components/ButtonsSection.vue';
+
+export default {
+  components: {
+    Header,
+    HeroSection,
+    ButtonsSection,
+  },
+};
+</script>
+
+
+
+<template>
   <header role="banner" class="fr-header">
     <div class="container-fluid">
       <div class="row align-items-center">
