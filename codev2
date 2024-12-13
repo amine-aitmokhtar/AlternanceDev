@@ -1,0 +1,364 @@
+<template>
+  <header role="banner" class="fr-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <!-- Logo -->
+        <div class="col-md-3 col-sm-6 text-center text-md-start">
+          <a href="/" title="République Française">
+            <img
+              src="https://www.univ-lehavre.fr/wp-content/uploads/2023/12/logos_universite_lehavre.png"
+              alt="Logo République Française"
+              class="fr-logo img-fluid"
+            />
+          </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="col-md-8 col-sm-12 text-center mt-3 mt-md-0">
+          <nav id="navigation-main" role="navigation" aria-label="Menu principal">
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link nav-formation" href="#">FORMATION</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-recherche" href="#">RECHERCHE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-international" href="#">INTERNATIONAL</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-campus" href="#">VIE DE CAMPUS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-universite" href="#">UNIVERSITÉ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-actualites" href="#">ACTUALITÉS</a>
+              </li>
+            </ul>
+       
+          </nav>
+          
+        </div>
+
+        <div class="col-md-1 text-end d-flex align-items-center justify-content-end">
+  <button class="btn-connect">CONNECTER</button>
+</div>
+
+
+
+      
+      </div>
+    </div>
+  </header>
+</template>
+
+<style scoped>
+/* Header principal */
+.fr-header {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 500;
+  padding: 15px 0;
+}
+
+/* Logo */
+.fr-logo {
+  max-height: 90px; /* Taille du logo */
+}
+
+/* Navigation */
+.nav-link {
+  color: black;
+  font-size: 0.9rem;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: transparent; /* Couleur par défaut */
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-formation::after {
+  background-color: #006400; /* Vert foncé */
+}
+
+.nav-recherche::after {
+  background-color: #ffa500; /* Orange clair */
+}
+
+.nav-international::after {
+  background-color: #800080; /* Mauve */
+}
+
+.nav-campus::after {
+  background-color: #4682b4; /* Bleu ciel un peu foncé */
+}
+
+.nav-universite::after {
+  background-color: #dc5539; /* Rouge */
+}
+
+.nav-actualites::after {
+  background-color: #e5735a; /* Rouge clair */
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #0053a0; /* Change la couleur au survol */
+}
+
+/* Boutons */
+button {
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b0432c;
+}
+
+
+</style>
+
+
+
+HEROSECTION :
+
+<template>
+    <section class="hero bg-white py-12">
+      <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <!-- Texte -->
+        <div class="text-content md:w-1/2 px-8">
+          <h1 class="text-5xl font-bold text-gray-800 leading-tight mb-6">
+            Université Le Havre Normandie
+          </h1>
+          <p class="text-2xl text-gray-600 mb-8">
+            Un territoire d’exception pour étudier
+          </p>
+          <a
+            href="#"
+            class="text-lg font-semibold text-blue-600 underline hover:text-blue-800"
+          >
+            DÉCOUVRIR
+          </a>
+        </div>
+  
+        <!-- Carousel -->
+        <div id="carouselExample" class="carousel slide md:w-1/2 px-8" data-bs-ride="carousel">
+          <!-- Indicators -->
+          <div class="carousel-indicators custom-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <!-- Carousel Items -->
+          <div class="carousel-inner rounded-lg shadow-lg overflow-hidden">
+            <div class="carousel-item active">
+              <img
+                src="https://www.univ-lehavre.fr/wp-content/uploads/2023/12/L1047424-1024x681.jpg"
+                class="d-block w-100"
+                alt="Slide 1"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://www.univ-lehavre.fr/wp-content/uploads/2023/12/L1047424-1024x681.jpg"
+                class="d-block w-100"
+                alt="Slide 2"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://www.univ-lehavre.fr/wp-content/uploads/2023/12/L1047424-1024x681.jpg"
+                class="d-block w-100"
+                alt="Slide 3"
+              />
+            </div>
+          </div>
+          <!-- Controls -->
+          <button
+            class="carousel-control-prev custom-control"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button
+            class="carousel-control-next custom-control"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </template>
+  
+  <style scoped>
+/* Carousel container */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Flèches de contrôle */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Fond plus foncé au survol */
+}
+
+.carousel-control-prev {
+  left: -20px;
+}
+
+.carousel-control-next {
+  right: -20px;
+}
+
+/* Icônes des flèches */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* Inverse la couleur pour une icône blanche */
+}
+
+/* Indicateurs */
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-indicators button.active {
+  background-color: #0053a0; /* Couleur active */
+  width: 16px;
+  height: 16px;
+}
+
+/* Images */
+.carousel-item img {
+  object-fit: cover;
+  height: 400px; /* Ajustez selon vos besoins */
+}
+</style>
+
+
+ButtonHeroSection
+
+<template>
+    <section class="buttons bg-[#dc5539] py-8">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-8">
+        <!-- Dropdown Lycéen -->
+        <div class="flex items-center space-x-4">
+          <label for="lyceen" class="text-white font-bold text-lg">Lycéen</label>
+          <select
+            id="lyceen"
+            class="bg-white text-gray-800 px-4 py-2 rounded-md focus:ring-2 focus:ring-[#b0432c] focus:outline-none"
+          >
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </select>
+        </div>
+  
+        <!-- Bouton Consulter -->
+        <div class="flex items-center space-x-4 mt-4 md:mt-0">
+          <button class="bg-white text-[#dc5539] border border-white px-6 py-3 rounded-md font-bold hover:bg-[#b0432c] hover:text-white transition duration-300">
+            Consulter le catalogue de formation
+          </button>
+          <button class="bg-white text-[#dc5539] rounded-full p-3 hover:bg-[#b0432c] hover:text-white transition duration-300">
+            →
+          </button>
+        </div>
+      </div>
+    </section>
+  </template>
+  
+  <style scoped>
+  .buttons {
+    background-color: #dc5539;
+  }
+  </style>
+
+
+
+import 'bootstrap/dist/css/bootstrap.css'
+
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
+    theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
